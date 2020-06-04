@@ -1,4 +1,7 @@
 from files import *
+from invoice_math import *
 
-Test = InvoiceFiles()
-Test.gather_audio()
+Files = InvoiceFiles()
+Calculations = InvoiceMath()
+
+data = Files.get_audio_information()
