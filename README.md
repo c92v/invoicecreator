@@ -1,2 +1,2 @@
 # invoicecreator
-automation of weekly invoices for work
+automation of weekly invoices for transcription work
