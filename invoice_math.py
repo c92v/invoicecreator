@@ -7,7 +7,7 @@ class InvoiceMath:
         def calculate_cost(self, time):
                 getcontext().prec = 4
                 return float(Decimal(time) * Decimal(self.rate))
-        def format_time(time):
+        def format_time(self, time):
                 minutes = time // 60
                 seconds = time % 60
                 if seconds >= 16 and seconds <= 45:
@@ -17,4 +17,7 @@ class InvoiceMath:
                 return minutes
         def convert_times(self, times):
                 for key, value in times.items():
-                        times[key] = self.format_time(value)
+                        times[key] = [ self.format_time(value) ]
+        def add_costs(self, times):
+                for key, value in times.items():
+                        value.append(self.calculate_cost(value[0]))
