@@ -21,3 +21,6 @@ class InvoiceMath:
         def add_costs(self, times):
                 for key, value in times.items():
                         value.append(self.calculate_cost(value[0]))
+                        self.total += value[1]
+        def get_total(self):
+                return self.total
